@@ -5,9 +5,9 @@ import {useState} from 'react';
 
 export default function Intensity() {
     const initialIntensity : Option[] =[
-        {name: "grazing", isSelected: false},
-        {name: "digging", isSelected: false},
-        {name: "bedrock breaking", isSelected: false},
+        {name: "spark", isSelected: false},
+        {name: "flame", isSelected: false},
+        {name: "inferno", isSelected: false},
     ];
 
     const [intensities, setIntensity] = useState(initialIntensity);
@@ -35,7 +35,7 @@ export default function Intensity() {
               border-2 capitalize hover:scale-105 active:scale-95
               ${
                 intensity.isSelected
-                  ? 'bg-green-600 border-green-600 text-white shadow-md hover:bg-green-700 hover:border-green-700'
+                  ? 'bg-orange-600 border-orange-600 text-white shadow-md hover:bg-orange-700 hover:border-orange-700'
                   : 'bg-gray-200 text-gray-700 border-gray-200 hover:bg-gray-300 hover:border-gray-300'
               }
             `}

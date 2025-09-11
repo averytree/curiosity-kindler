@@ -29,7 +29,7 @@ export default function Tones() {
 
     return (
     <div className="flex w-full mx-auto max-w-4xl">
-      <h2 className="text-2xl font-bold mb-4 px-3 text-right">Which flavors?</h2>
+      <h2 className="text-2xl font-bold mb-4 px-3 text-right">Which tones?</h2>
       <div className="flex flex-wrap gap-3">
         {tones.map((tone) => (
           <button
@@ -40,7 +40,7 @@ export default function Tones() {
               border-2 capitalize hover:scale-105 active:scale-95
               ${
                 tone.isSelected
-                  ? 'bg-green-600 border-green-600 text-white shadow-md hover:bg-green-700 hover:border-green-700'
+                  ? 'bg-orange-600 border-orange-600 text-white shadow-md hover:bg-orange-700 hover:border-orange-700'
                   : 'bg-gray-200 text-gray-700 border-gray-200 hover:bg-gray-300 hover:border-gray-300'
               }
             `}
