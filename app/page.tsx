@@ -8,10 +8,10 @@ export default function Home() {
   return (
     <div className="grid grid-rows-[10px_1fr_10px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-aleo-sans)]">
       <main className="flex flex-col gap-[32px] row-start-2 items-center">
-        <h1 className="text-3xl font-bold py-1 md:text-4xl">
+        <h1 className="text-center text-3xl font-bold py-1 md:text-4xl">
           Curiosity Kindler
         </h1>
-        <p className="text-lg text-gray-100 py-1 -mt-9 mb-8 md:text-xl">
+        <p className="text-center text-lg text-gray-100 py-1 -mt-9 mb-8 md:text-xl">
           For those ignited by questions, not answers
           </p>
         <Tones></Tones>

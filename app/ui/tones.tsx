@@ -28,9 +28,9 @@ export default function Tones() {
 
 
     return (
-    <div className="flex w-full mx-auto max-w-4xl">
-      <h2 className="text-2xl font-bold mb-4 px-3 text-right">Which tones?</h2>
-      <div className="flex flex-wrap gap-3">
+    <div className="flex flex-col md:flex-row w-full mx-auto max-w-4xl md:items-center">
+      <h2 className="text-2xl font-bold mb-4 md:mb-0 px-3 text-center md:text-left md:whitespace-nowrap">Which tones?</h2>
+      <div className="flex justify-center md:justify-start flex-wrap gap-3">
         {tones.map((tone) => (
           <button
             key={tone.name}
