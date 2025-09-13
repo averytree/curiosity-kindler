@@ -1,20 +1,32 @@
 'use client'
 
-import { useState } from "react";
 import { useAppContext } from "../lib/AppContext";
+import { formulateMessage, queryAPI } from "../lib/actions";
 
 
 export default function SearchBar() {
-  const {query, setQuery} = useAppContext();
+  const {query, setQuery, tones, intensities,  setResponses, setResponseStatus} = useAppContext();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (query.trim() === "") return;
-    
-    console.log("Search received on server:", query);
 
-    setQuery("");
-  };
+    const messageForLLM = formulateMessage(tones, intensities, query);
+    
+    try {
+      const reply = await queryAPI(messageForLLM);
+      setResponses(reply);
+      setResponseStatus(query);
+      setQuery("");
+    }
+    catch(err) {
+      console.error("Error fetching API:", err);
+      setResponseStatus("error");
+    }   
+  }
+    
+
+   
 
   return (
     <form

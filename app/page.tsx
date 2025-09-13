@@ -2,6 +2,7 @@ import Image from "next/image";
 import Tones from "./ui/tones";
 import Intensity from "./ui/intensity";
 import SearchBar from "./ui/search";
+import Responses from "./ui/responses";
 
 export default function Home() {
 
@@ -17,6 +18,7 @@ export default function Home() {
         <Tones></Tones>
         <Intensity></Intensity>
         <SearchBar></SearchBar>
+        <Responses></Responses>
 
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
