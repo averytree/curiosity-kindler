@@ -2,19 +2,12 @@
 
 import {Option} from '@/app/lib/definitions';
 import {useState} from 'react';
+import { useAppContext } from '../lib/AppContext';
 
 export default function Tones() {
-    const initialTones : Option[] = [
-        {name: "practical", isSelected: false},
-        {name: "theoretical", isSelected: false},
-        {name: "personal", isSelected: false},
-        {name: "playful", isSelected: false},
-        {name: "formal", isSelected: false}, 
-        {name: "debatable", isSelected: false}, 
-        {name: "absurd", isSelected: false} 
-    ];
+    
 
-    const [tones, setTones] = useState(initialTones);
+    const {tones, setTones} = useAppContext();
 
     function handleToneClick(clickedName: string) {
         const updatedTones = tones.map((currTone)=> {

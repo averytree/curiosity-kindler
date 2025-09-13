@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Aleo} from "next/font/google";
 import "./ui/globals.css";
+import { AppProvider } from "./lib/AppContext";
 
 const aleoSans = Aleo({
   variable: "--font-aleo-sans",
@@ -23,7 +24,9 @@ export default function RootLayout({
       <body
         className={`${aleoSans.variable} antialiased`}
       >
-        {children}
+        <AppProvider>
+          {children}
+        </AppProvider>
       </body>
     </html>
   );

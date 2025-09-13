@@ -2,15 +2,11 @@
 
 import {Option} from '@/app/lib/definitions';
 import {useState} from 'react';
+import { useAppContext } from '../lib/AppContext';
 
 export default function Intensity() {
-    const initialIntensity : Option[] =[
-        {name: "spark", isSelected: false},
-        {name: "flame", isSelected: false},
-        {name: "inferno", isSelected: false},
-    ];
-
-    const [intensities, setIntensity] = useState(initialIntensity);
+    
+    const {intensities, setIntensities} = useAppContext()
 
     function handleIntensityClick(clickedName: string) {
         const updatedIntensity = intensities.map((currIntensity) => {
@@ -19,7 +15,7 @@ export default function Intensity() {
             }
             return currIntensity;
         })
-        setIntensity(updatedIntensity);
+        setIntensities(updatedIntensity);
     }
 
     return (

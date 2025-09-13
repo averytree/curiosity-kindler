@@ -1,10 +1,11 @@
 'use client'
 
 import { useState } from "react";
+import { useAppContext } from "../lib/AppContext";
 
 
 export default function SearchBar() {
-  const [query, setQuery] = useState("");
+  const {query, setQuery} = useAppContext();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -29,7 +30,7 @@ export default function SearchBar() {
       />
       <button
         type="submit"
-        className="md:ml-2 px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition"
+        className="md:ml-2 px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition hover:scale-105 active:scale-95"
       >
         Ask Away
       </button>
