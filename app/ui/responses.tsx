@@ -10,8 +10,6 @@ export default function Responses() {
     const [displayedQ, setDisplayedQ] = useState<string[]>([]);
     const [currentQ, setCurrentQ] = useState("");
 
-    const responseList = responses.split("*");
-
     //If responses changes, then clear the current displayed Q's
     //TODO future implementation:  display a log of past questions
     useEffect(()=> {
@@ -22,6 +20,8 @@ export default function Responses() {
 
     //Typewriter effect when responses change
     useEffect(() => {
+        const responseList = responses.split("*");
+    
         //All questions have been "typewritered" as are now displayed
         if (currentQIndex >= responseList.length) return;
         
@@ -52,7 +52,7 @@ export default function Responses() {
     if (responseStatus === "empty") return (<div></div>);
 
     if (responseStatus === "error"){
-        return (<div className="text-1xl text-center">I'm sorry, something went wrong. Please try again.</div>);
+        return (<div className="text-1xl text-center">Sorry, something went wrong. Please try again.</div>);
     }
 
     else {
