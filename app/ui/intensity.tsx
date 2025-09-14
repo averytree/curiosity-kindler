@@ -1,7 +1,5 @@
 'use client'
 
-import {Option} from '@/app/lib/definitions';
-import {useState} from 'react';
 import { useAppContext } from '../lib/AppContext';
 
 export default function Intensity() {
@@ -11,7 +9,10 @@ export default function Intensity() {
     function handleIntensityClick(clickedName: string) {
         const updatedIntensity = intensities.map((currIntensity) => {
             if (currIntensity.name === clickedName) {
-                currIntensity.isSelected = !currIntensity.isSelected;
+                currIntensity.isSelected = true;
+            }
+            else {
+              currIntensity.isSelected = false;
             }
             return currIntensity;
         })

@@ -2,24 +2,30 @@
 
 import { useAppContext } from "../lib/AppContext";
 import { formulateMessage, queryAPI } from "../lib/actions";
+import { useState } from "react";
 
 
 export default function SearchBar() {
   const {query, setQuery, tones, intensities,  setResponses, setResponseStatus} = useAppContext();
+  const [isLoading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (query.trim() === "") return;
 
+    setLoading(true);
+    setResponseStatus("empty");
     const messageForLLM = formulateMessage(tones, intensities, query);
     
     try {
       const reply = await queryAPI(messageForLLM);
+      setLoading(false);
       setResponses(reply);
       setResponseStatus(query);
       setQuery("");
     }
     catch(err) {
+      setLoading(false);
       console.error("Error fetching API:", err);
       setResponseStatus("error");
     }   
@@ -29,9 +35,10 @@ export default function SearchBar() {
    
 
   return (
-    <form
+    <div className="flex flex-col items-center w-full max-w-4xl">
+      <form
       onSubmit={handleSubmit}
-      className="flex flex-col md:flex-row  items-stretch w-full max-w-4xl mx-auto bg-orange-200 rounded-lg shadow-md px-5 py-3 focus-within:ring-2 focus-within:ring-orange-200 transition"
+      className="flex flex-col md:flex-row  items-stretch w-full bg-orange-200 rounded-lg shadow-md px-5 py-3 focus-within:ring-2 focus-within:ring-orange-200 transition"
     >
       <input
         type="text"
@@ -47,5 +54,10 @@ export default function SearchBar() {
         Ask Away
       </button>
     </form>
+      {isLoading && <img 
+      src="/loadman.gif" 
+      alt="A loading gif of a spinning ball person" 
+      className="w-25 h-auto mt-6 rounded-lg shadow-md"/>}
+    </div>
   );
 }

@@ -7,12 +7,12 @@ import Responses from "./ui/responses";
 export default function Home() {
 
   return (
-    <div className="grid grid-rows-[10px_1fr_10px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-aleo-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center">
-        <h1 className="text-center text-3xl font-bold py-1 md:text-4xl">
+    <div className="items-center justify-items-center min-h-screen p-8 pb-10 font-[family-name:var(--font-aleo-sans)]">
+      <main className="flex flex-col gap-[32px] items-center w-full max-w-4xl mx-auto">
+        <h1 className="text-center text-3xl font-bold md:text-4xl">
           Curiosity Kindler
         </h1>
-        <p className="text-center text-lg text-gray-100 py-1 -mt-9 mb-8 md:text-xl">
+        <p className="text-center text-lg text-gray-100 py-1 -mt-9 mb-2 md:text-xl">
           For those ignited by questions, not answers
           </p>
         <Tones></Tones>
@@ -21,7 +21,7 @@ export default function Home() {
         <Responses></Responses>
 
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+      {/* <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
@@ -67,7 +67,7 @@ export default function Home() {
           />
           Go to nextjs.org →
         </a>
-      </footer>
+      </footer> */}
     </div>
   );
 }
