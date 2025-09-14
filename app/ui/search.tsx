@@ -60,7 +60,8 @@ export default function SearchBar() {
       alt="A loading gif of a spinning ball person" 
       width="80"
       height="80"
-      className="h-auto mt-6 rounded-lg shadow-md"/>}
+      className="h-auto mt-6 rounded-lg shadow-md"
+      unoptimized/>}
     </div>
   );
 }
