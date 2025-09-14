@@ -11,9 +11,11 @@ export default function SearchBar() {
   const [isLoading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    //prevent form default behavior e.g. browser reload
     e.preventDefault();
     if (query.trim() === "") return;
 
+    //configure loading state while we wait for the query to process
     setLoading(true);
     setResponseStatus("empty");
     const messageForLLM = formulateMessage(tones, intensities, query);
@@ -42,6 +44,7 @@ export default function SearchBar() {
       className="flex flex-col md:flex-row  items-stretch w-full bg-orange-200 rounded-lg shadow-md px-5 py-3 focus-within:ring-2 focus-within:ring-orange-200 transition"
     >
       <input
+        name="User open-ended input regarding curiosity"
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
@@ -60,7 +63,7 @@ export default function SearchBar() {
       alt="A loading gif of a spinning ball person" 
       width="80"
       height="80"
-      className="h-auto mt-6 rounded-lg shadow-md"
+      className="h-auto mt-6 rounded-lg"
       unoptimized/>}
     </div>
   );

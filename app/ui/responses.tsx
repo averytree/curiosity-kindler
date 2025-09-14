@@ -28,14 +28,14 @@ export default function Responses() {
     useEffect(() => {
         const responseList = responses.split("*");
     
-        //All questions have been "typewritered" as are now displayed
+        //Return if all questions have been "typewritered" as are now displayed
         if (currentQIndex >= responseList.length) return;
         
         const currentQInFull = responseList[currentQIndex]
         let charIndex = 0;
 
+        //Repeatedly add chars to the current typewriter question until all chars have been added
         const interval = setInterval(() => {
-            //Repeatedly add chars to the current typewriter question until all chars have been added
             if (charIndex < currentQInFull.length){
                 setCurrentQ(currentQInFull.substring(0,charIndex+1))
                 charIndex ++;
@@ -53,8 +53,7 @@ export default function Responses() {
         return () => clearInterval(interval);
     }, [currentQIndex, responses]);
 
-
-
+    //If a query hasn't been asked or a new query is loading, clear the response container 
     if (responseStatus === "empty") return (<div></div>);
 
     if (responseStatus === "error"){
@@ -66,7 +65,7 @@ export default function Responses() {
         const questionPosed = responseStatus;
         
 
-        return (<div className="flex flex-col max-w-4xl w-full mx-auto">
+        return (<div className="flex flex-col max-w-4xl w-full mx-auto pl-4">
             <h2 className="text-2xl font-bold text-center w-full  md:text-left mb-3">{questionPosed}</h2>
             <ul className="flex flex-col w-full">
                 {displayedQ.map((response, index) => (

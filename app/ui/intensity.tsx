@@ -6,6 +6,7 @@ export default function Intensity() {
     
     const {intensities, setIntensities} = useAppContext()
 
+    //Ensures only the most recently clicked intensity is selected
     function handleIntensityClick(clickedName: string) {
         const updatedIntensity = intensities.map((currIntensity) => {
             if (currIntensity.name === clickedName) {

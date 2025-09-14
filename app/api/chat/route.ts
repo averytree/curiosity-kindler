@@ -5,6 +5,7 @@ const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY, 
 });
 
+//Posts message to LLM
 export async function POST(req: Request) {
     try {
         const { message } = await req.json()

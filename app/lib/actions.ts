@@ -14,6 +14,7 @@ export function formulateMessage(tone: Option[], intensities: Option[], query: s
     return introBlurb + toneBlurb + intensityBlurb + queryBlurb
 }
 
+//API call to LLM
 export async function queryAPI(info: string): Promise<string> {
     const res = await fetch("/api/chat", {
     method: "POST",

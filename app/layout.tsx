@@ -11,7 +11,7 @@ const aleoSans = Aleo({
 
 export const metadata: Metadata = {
   title: "Curiosity Kindler",
-  description: "description TODO",
+  description: "For those ignited by questions, not answers",
 };
 
 export default function RootLayout({

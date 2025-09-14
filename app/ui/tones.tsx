@@ -3,10 +3,9 @@
 import { useAppContext } from '../lib/AppContext';
 
 export default function Tones() {
-    
-
     const {tones, setTones} = useAppContext();
 
+    //update Tones to include all clicked buttons
     function handleToneClick(clickedName: string) {
         const updatedTones = tones.map((currTone)=> {
             if (currTone.name === clickedName) {
