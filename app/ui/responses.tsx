@@ -1,7 +1,7 @@
 'use client' 
 
 import { useAppContext } from "../lib/AppContext";
-import { useState, useEffect } from "react";
+import { useState, useEffect , useRef} from "react";
 
 
 export default function Responses() {
@@ -9,6 +9,7 @@ export default function Responses() {
     const [currentQIndex, setCurrentQIndex] = useState(0);
     const [displayedQ, setDisplayedQ] = useState<string[]>([]);
     const [currentQ, setCurrentQ] = useState("");
+    const bottomRef = useRef<HTMLDivElement | null>(null);
 
     //If responses changes, then clear the current displayed Q's
     //TODO future implementation:  display a log of past questions
@@ -17,6 +18,11 @@ export default function Responses() {
         setCurrentQ("");
         setCurrentQIndex(0);
     }, [responses])
+
+    //Keeps questions in view as typewriter adds text
+    useEffect(()=> {
+        bottomRef.current?.scrollIntoView({behavior: "smooth"});
+    }, [displayedQ, currentQ]);
 
     //Typewriter effect when responses change
     useEffect(() => {
@@ -78,6 +84,8 @@ export default function Responses() {
                     </li>
                 }
             </ul>
+            {/* invisible anchor for scrollIntoView */}
+            <div ref={bottomRef} />
         </div>
         );
     }
