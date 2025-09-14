@@ -11,8 +11,8 @@ export default function Home() {
         <h1 className="text-center text-3xl font-bold md:text-4xl">
           Curiosity Kindler
         </h1>
-        <p className="text-center text-lg text-gray-800 dark:text-gray-100 py-1 -mt-9 mb-2 md:text-xl">
-          For those ignited by questions, not answers
+        <p className="text-center  text-lg text-gray-800 dark:text-gray-100 py-1 -mt-9 mb-2 md:text-xl">
+          a search engine that generates questions, not answers
           </p>
         <Tones></Tones>
         <Intensity></Intensity>

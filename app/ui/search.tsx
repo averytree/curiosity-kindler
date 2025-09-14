@@ -55,7 +55,7 @@ export default function SearchBar() {
         type="submit"
         className="md:ml-2 px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition hover:scale-105 active:scale-95"
       >
-        Ask Away
+        Ignite
       </button>
     </form>
       {isLoading && <Image 

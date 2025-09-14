@@ -1,6 +1,6 @@
-# Welcome to the curiosity kindler!
+# Welcome to the Curiosity Kindler!
 
-In an answer-overloaded world, I hope this project can serve as a question-oriented ponderspace for curious minds. Whether you're a writer, teacher, student, coach, therapist, new friend, new lover, interviewer, interviewee, or just someone looking to stretch your mind, I hope these questions can spark some exciting thoughts.
+In an answer-overloaded world, I hope this project can serve as a question-oriented ponderspace for curious minds. Whether you're a writer, teacher, student, interviewer, interviewee, coach, therapist, new friend, new lover, or just someone looking to stretch your mind, I hope these questions can spark some exciting thoughts.
 
 Based on three variables (tone selection, intensity selection, text input), I query an AI model to pose five questions guided by a philosophy of what (I think) makes a good, critical question. 
 

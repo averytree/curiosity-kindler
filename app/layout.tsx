@@ -11,7 +11,15 @@ const aleoSans = Aleo({
 
 export const metadata: Metadata = {
   title: "Curiosity Kindler",
-  description: "For those ignited by questions, not answers",
+  description: "A search engine that generates questions, not answers.",
+  authors: [{name: 'Avery Keare', url:'http://linkedin.com/in/averykeare'}],
+  keywords: ['Question Generator', 'Questions', "Question Engine", "Search Engine", "Questionaire Generator", "Brainstorm Help", "Interviews", "Create Questions", "Inspiration", "Curious", "Curiosity"], 
+  openGraph: {
+    title: 'Curiosity Kindler',
+    description: 'A search engine that generates questions, not answers.',
+    url: 'https://curiosity-kindler.vercel.app',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
