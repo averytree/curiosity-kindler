@@ -3,6 +3,7 @@
 import { useAppContext } from "../lib/AppContext";
 import { formulateMessage, queryAPI } from "../lib/actions";
 import { useState } from "react";
+import Image from 'next/image';
 
 
 export default function SearchBar() {
@@ -54,10 +55,12 @@ export default function SearchBar() {
         Ask Away
       </button>
     </form>
-      {isLoading && <img 
+      {isLoading && <Image 
       src="/loadman.gif" 
       alt="A loading gif of a spinning ball person" 
-      className="w-25 h-auto mt-6 rounded-lg shadow-md"/>}
+      width="80"
+      height="80"
+      className="h-auto mt-6 rounded-lg shadow-md"/>}
     </div>
   );
 }
