@@ -16,9 +16,9 @@ Practical questions explore day-to-day experiences or social and political dynam
 A playful tone is light and humorous, while a formal tone is professional and respectful. 
 An absurd tone is unexpected and pushes the boundaries of imagination. 
 
-## Intensity selection
+## Depth selection
 
-Questions should become increasingly intense from a light, more surface level “Spark” to a moderate “Flame” to a challenging “Inferno.” 
+Light should generate simple, surface level questions that range from eight to fifteen words. Moderate depth generates moderately challenging questions, averaging around twenty to thirty words. Inferno intensity generates the deepest, hardest, most thought-provoking questions which can be short and punchy, mid length, or as long as fifty words but no longer.
 
 ## Text input
 
@@ -31,6 +31,7 @@ For now, I am using the gemini-2.5-flash API. I am not totally locked into this 
 ## Upcoming features
 
 Including but not limited to:
+- Share questions
 - Add custom tones
 - "Need inspiration?" random generator
 - Save/favorite questions

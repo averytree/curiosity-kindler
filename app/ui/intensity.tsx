@@ -3,26 +3,26 @@
 import { useAppContext } from '../lib/AppContext';
 
 export default function Intensity() {
-    
-    const {intensities, setIntensities} = useAppContext()
 
-    //Ensures only the most recently clicked intensity is selected
-    function handleIntensityClick(clickedName: string) {
-        const updatedIntensity = intensities.map((currIntensity) => {
-            if (currIntensity.name === clickedName) {
-                currIntensity.isSelected = true;
-            }
-            else {
-              currIntensity.isSelected = false;
-            }
-            return currIntensity;
-        })
-        setIntensities(updatedIntensity);
-    }
+  const { intensities, setIntensities } = useAppContext()
 
-    return (
+  //Ensures only the most recently clicked intensity is selected
+  function handleIntensityClick(clickedName: string) {
+    const updatedIntensity = intensities.map((currIntensity) => {
+      if (currIntensity.name === clickedName) {
+        currIntensity.isSelected = true;
+      }
+      else {
+        currIntensity.isSelected = false;
+      }
+      return currIntensity;
+    })
+    setIntensities(updatedIntensity);
+  }
+
+  return (
     <div className="flex flex-col md:flex-row w-full mx-auto max-w-4xl md:items-center">
-      <h2 className="text-2xl font-bold mb-4 md:mb-0 px-3 text-center md:text-left md:whitespace-nowrap">Which intensity?</h2>
+      <h2 className="text-2xl font-bold mb-4 md:mb-0 px-3 text-center md:text-left md:whitespace-nowrap">Question Depth:</h2>
       <div className="flex justify-center md:justify-start flex-wrap gap-3">
         {intensities.map((intensity) => (
           <button
@@ -31,10 +31,9 @@ export default function Intensity() {
             className={`
               px-3 py-2 rounded-lg font-medium text-sm transition-all duration-200 
               border-2 capitalize hover:scale-105 active:scale-95
-              ${
-                intensity.isSelected
-                  ? 'bg-orange-600 border-orange-600 text-white shadow-md hover:bg-orange-700 hover:border-orange-700'
-                  : 'bg-gray-200 text-gray-700 border-gray-200 hover:bg-gray-300 hover:border-gray-300'
+              ${intensity.isSelected
+                ? 'bg-amber-700 border-amber-700 text-white shadow-md hover:bg-amber-800 hover:border-amber-800'
+                : 'bg-gray-200 text-gray-700 border-gray-200 hover:bg-gray-300 hover:border-gray-300'
               }
             `}
           >
@@ -42,6 +41,6 @@ export default function Intensity() {
           </button>
         ))}
       </div>
-      </div>
-    );
+    </div>
+  );
 }
