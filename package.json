@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest"
   },
   "dependencies": {
     "@google/genai": "^1.19.0",
@@ -18,12 +19,23 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^30.0.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/testing-library__react": "^10.0.1",
+    "cypress": "^15.2.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.5",
+    "jest": "^30.1.3",
+    "jest-environment-jsdom": "^30.1.2",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "ts-jest": "^29.4.1",
+    "typescript": "^5",
+    "undici": "^7.16.0",
+    "web-streams-polyfill": "^4.2.0"
   }
 }

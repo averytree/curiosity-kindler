@@ -41,6 +41,7 @@ export default function SearchBar() {
     <div className="flex flex-col items-center w-full max-w-4xl">
       <form
         onSubmit={handleSubmit}
+        data-testid="search-form"
         className="flex flex-col md:flex-row  items-stretch w-full bg-orange-200 rounded-lg shadow-md px-5 py-3 focus-within:ring-2 focus-within:ring-orange-200 transition"
       >
         <input

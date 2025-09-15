@@ -27,7 +27,7 @@ export default function Responses() {
 
     //Typewriter effect when responses change
     useEffect(() => {
-        const responseList = responses.split("*");
+        const responseList = (responses ?? "").split("*");
 
         //Return if all questions have been "typewritered" as are now displayed
         if (currentQIndex >= responseList.length) return;
